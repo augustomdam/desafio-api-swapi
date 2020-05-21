@@ -1,0 +1,37 @@
+<div class="container">
+    <h1 class="text-center mt-2">Lista de Personagens</h1>
+
+    <div class="row">
+    <% @peoples['results'].each do |people| %>
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <%= people['name'] %>
+                        <%= link_to "", {:controller => "favorite", :action => "create", 
+                            :favorite => people, :url => people['url']}, :method=>:post, 
+                            class: "btn btn-primary  float-right fas fa-heart"  
+                        %>
+
+                        
+                    </div>
+                    <div class="card-body">
+                        <p>Ano de nascimento: <%= people['birth_year'] %> <p>
+                        <p>Cor dos Olhos: <%= people['eye_color'] %> <p>
+                        <p>Sexo: <%= people['gender'] %> <p>
+                        <p>Cor do Cabelo: <%= people['hair_color'] %> <p>
+                        <p>Altura: <%= people['height'] %> <p>
+                        <p>Peso: <%= people['mass'] %> <p>
+                        <p>Cor da Pele: <%= people['skin_color'] %> <p>
+                        <p>Planeta: <%= people['homeworld']%> <p>
+                        <p>Filmes: <%= people['films'] %> <p>
+                        <p>Especies: <%= people['species'] %> <p>
+                        <p>Naves Estelares: <%= people['starships'] %> <p>
+                        <p>Veiculos: <%= people['vehicles'] %> <p>
+                        <p>Criado em: <%= people['created'] %> <p>
+                        <p>Atualizado em: <%= people['edited'] %> <p><br>        
+                    </div>
+                </div>
+            </div>
+    <% end %>
+    </div>
+</div>

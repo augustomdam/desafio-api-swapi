@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="text-center mt-2">Lista de Filmes</h1>
+    <div class="row">
+    <% @films['results'].each do |film| %>
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <%= film['title'] %>
+                        <%= link_to "", {:controller => "favorite", :action => "create", 
+                            :favorite => film, :url => film['url']}, :method=>:post, 
+                            class: "btn btn-primary  float-right fas fa-heart"  
+                        %>
+                    </div>
+                    <div class="card-body">
+                        <p>Episodio: <%= film['episode_id'] %> <p>
+                        <p>Parágrafos de abertura: <%= film['opening_crawl'] %> <p>
+                        <p>Diretor: <%= film['director'] %> <p>
+                        <p>Produtor: <%= film['producer'] %> <p>
+                        <p>Lançamento do filme: <%= film['release_date'] %> <p>
+                        <p>Especies: <%= film['species'] %> <p>
+                        <p>Naves Estelares: <%= film['starships'] %> <p>
+                        <p>Veiculos: <%= film['vehicles']%> <p>
+                        <p>Elenco: <%= film['characters'] %> <p>
+                        <p>Filmes: <%= film['films'] %> <p>
+                        <p>Criado em: <%= film['created'] %> <p>
+                        <p>Atualizado em: <%= film['edited'] %> <p><br>        
+                        <a href="#" class="btn btn-primary">Favoritar</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

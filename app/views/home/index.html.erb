@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center mt-2">EndPoints da API</h1>
+    <div class="row">
+        <div class="col-md-3 mb-2"></div>
+        <div class="col-md-6 mb-2">
+            <div class="card">
+                <div class="card-header">
+                    EndPoints
+                </div>
+                <div class="card-body">
+                    <% @general.each do |dado| %>
+                        <p><%=dado%><p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

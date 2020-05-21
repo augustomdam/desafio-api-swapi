@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="text-center mt-2">Lista de Veículos</h1>
+    <div class="row">
+    <% @vehicules['results'].each do |vehicule| %>
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <div class="card-header">
+                        <%= vehicule['name'] %>
+                        <%= link_to "", {:controller => "favorite", :action => "create", 
+                            :favorite => vehicule, :url => vehicule['url']}, :method=>:post, 
+                            class: "btn btn-primary  float-right fas fa-heart"  
+                        %>
+                    </div>
+                    <div class="card-body">
+                        <p>Modelo: <%= vehicule['model'] %> <p>
+                        <p>Classe: <%= vehicule['vehicle_class'] %> <p>
+                        <p>Fabricante: <%= vehicule['manufacturer'] %> <p>
+                        <p>Comprimento: <%= vehicule['length'] %> <p>
+                        <p>Custo: <%= vehicule['cost_in_credits'] %> <p>
+                        <p>Capacidade: <%= vehicule['crew'] %> <p>
+                        <p>Passageiros: <%= vehicule['passengers'] %> <p>
+                        <p>Velocidade: <%= vehicule['max_atmosphering_speed']%> <p>
+                        <p>Carga Maxima: <%= vehicule['cargo_capacity'] %> <p>
+                        <p>Tempo de Consumo: <%= vehicule['consumables'] %> <p>
+                        <p>Filmes: <%= vehicule['films'] %> <p>
+                        <p>Pessoas: <%= vehicule['people'] %> <p>
+                        <p>Criado em: <%= vehicule['created'] %> <p>
+                        <p>Atualizado em: <%= vehicule['edited'] %> <p><br>        
+                        <a href="#" class="btn btn-primary">Favoritar</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
